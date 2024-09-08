@@ -1,0 +1,68 @@
+[
+    {
+      "id": 1,
+      "title": "Discrimination in Employment",
+      "scenario": "A qualified woman is denied a job because of her gender. Analyze whether this violates any constitutional rights.",
+      "clues": [
+        "Article 14: Equality before Law",
+        "Article 15: Prohibition of Discrimination",
+        "Article 16: Equality of Opportunity in Public Employment",
+        "Article 17: Abolition of Untouchability"
+      ],
+      "correctAnswer": "Article 15: Prohibition of Discrimination",
+      "solution": "The denial of employment based on gender violates Article 15, which prohibits discrimination on the grounds of religion, race, caste, sex, or place of birth."
+    },
+    {
+      "id": 2,
+      "title": "Caste-Based Discrimination",
+      "scenario": "A person from a lower caste is refused entry to a public park. Analyze whether this violates any constitutional rights.",
+      "clues": [
+        "Article 14: Equality before Law",
+        "Article 15: Prohibition of Discrimination",
+        "Article 17: Abolition of Untouchability",
+        "Article 18: Abolition of Titles"
+      ],
+      "correctAnswer": "Article 17: Abolition of Untouchability",
+      "solution": "Refusing entry to a public park based on caste violates Article 17, which abolishes untouchability and forbids such discrimination."
+    },
+    {
+      "id": 3,
+      "title": "Reservation in Educational Institutions",
+      "scenario": "A student from a reserved category is given admission preference in a government-run educational institution. Analyze whether this violates any constitutional rights.",
+      "clues": [
+        "Article 14: Equality before Law",
+        "Article 15: Prohibition of Discrimination",
+        "Article 16: Equality of Opportunity in Public Employment",
+        "Article 46: Promotion of Educational and Economic Interests of Scheduled Castes, Scheduled Tribes and other Weaker Sections"
+      ],
+      "correctAnswer": "Article 46: Promotion of Educational and Economic Interests",
+      "solution": "The reservation policy does not violate Article 14, as Article 46 encourages the state to promote the educational and economic interests of weaker sections, including SC/ST categories."
+    },
+    {
+      "id": 4,
+      "title": "Denial of Voting Rights",
+      "scenario": "A person from a specific minority group is denied the right to vote. Analyze whether this violates any constitutional rights.",
+      "clues": [
+        "Article 14: Equality before Law",
+        "Article 15: Prohibition of Discrimination",
+        "Article 326: Elections to the House of the People and to the Legislative Assemblies of States",
+        "Article 17: Abolition of Untouchability"
+      ],
+      "correctAnswer": "Article 326: Elections to the House of the People and to the Legislative Assemblies of States",
+      "solution": "Denying voting rights based on group identity violates Article 326, which ensures that elections are conducted based on universal adult suffrage, irrespective of religion, race, caste, or sex."
+    },
+    {
+      "id": 5,
+      "title": "Abolition of Titles",
+      "scenario": "A wealthy businessman is given the honorary title of ‘Sir’ by a foreign government and uses it in India. Analyze whether this violates any constitutional rights.",
+      "clues": [
+        "Article 14: Equality before Law",
+        "Article 16: Equality of Opportunity in Public Employment",
+        "Article 18: Abolition of Titles",
+        "Article 19: Freedom of Speech and Expression"
+      ],
+      "correctAnswer": "Article 18: Abolition of Titles",
+      "solution": "Using titles like ‘Sir’ awarded by a foreign government violates Article 18, which prohibits Indian citizens from accepting titles from foreign states."
+    }
+  ]
+  
