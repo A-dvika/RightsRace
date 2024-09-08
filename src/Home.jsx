@@ -22,7 +22,7 @@ const Home = () => {
       {rights.map((right, index) => (
         <Box
           key={index}
-          bg="darkerShade"
+          bg="darkestShade"
           color="white"
           height="150px"
           borderRadius="md"

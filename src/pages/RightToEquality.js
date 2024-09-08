@@ -1,13 +1,13 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import QuizBoard from "../../components/QuizBoard";
+import QuizBoard from "../components/QuizBoard";
 
 const RightToEquality = () => {
   const [questionData, setQuestionData] = useState(null);
 
   useEffect(() => {
-    // Fetch the quiz question from the JSON file
-    fetch("/pages/RightToEquality/question.json")
+    // Fetch the quiz questions from the JSON file
+    fetch("RightToEquality/questions.json")
       .then((response) => response.json())
       .then((data) => setQuestionData(data));
   }, []);
@@ -17,7 +17,7 @@ const RightToEquality = () => {
   }
 
   return (
-    <Box bg="lighterShade" minHeight="100vh" p={5}>
+    <Box bg="#E6DFD5" minHeight="100vh" p={5}>
       <QuizBoard questionData={questionData} />
     </Box>
   );

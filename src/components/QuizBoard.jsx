@@ -1,48 +1,69 @@
-import { Box, Text, Heading, VStack, Button, RadioGroup, Radio, Stack } from "@chakra-ui/react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Box, Text, Button, Flex, VStack, Alert, AlertIcon } from "@chakra-ui/react";
 
 const QuizBoard = ({ questionData }) => {
-  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [isCorrect, setIsCorrect] = useState(null);
   const [showSolution, setShowSolution] = useState(false);
 
-  const handleSubmit = () => {
+  if (!questionData || questionData.length === 0) {
+    return <Text color="white">No questions available.</Text>;
+  }
+
+  const question = questionData[currentQuestionIndex];
+
+  const handleAnswerSelect = (answer) => {
+    setSelectedAnswer(answer);
+    setIsCorrect(answer === question.correctAnswer);
     setShowSolution(true);
+  };
+
+  const nextQuestion = () => {
+    setSelectedAnswer(null);
+    setShowSolution(false);
+    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
 
   return (
     <Box
-      bg="darkestShade"
+      bg="#342A22" // Darkest shade for the board
+      p={5}
       borderRadius="md"
-      borderWidth="10px"
-      borderColor="darkerShade"
-      p={8}
-      maxWidth="800px"
+      boxShadow="lg"
+      maxW="1000px"
       mx="auto"
       mt={10}
-      color="white"
     >
-      <VStack spacing={5} align="start">
-        <Heading size="lg">{questionData.title}</Heading>
-        <Text>{questionData.scenario}</Text>
-        <Text fontWeight="bold">Clues:</Text>
-        <RadioGroup onChange={setSelectedAnswer} value={selectedAnswer}>
-          <Stack spacing={3}>
-            {questionData.clues.map((clue, index) => (
-              <Radio key={index} value={clue}>
-                {clue}
-              </Radio>
-            ))}
-          </Stack>
-        </RadioGroup>
-        <Button colorScheme="teal" onClick={handleSubmit}>Submit Answer</Button>
-
+      <VStack spacing={4} align="stretch">
+        <Text fontSize="lg" fontWeight="bold" color="white">
+          {question.title}
+        </Text>
+        <Text color="white">{question.scenario}</Text>
+        <VStack spacing={2} align="stretch">
+          {question.clues.map((clue, index) => (
+            <Button
+              key={index}
+              colorScheme="teal"
+              variant="outline"
+              onClick={() => handleAnswerSelect(clue)}
+              _hover={{ bg: "#5C3A1E", color: "white" }} // Darker shade on hover
+              _focus={{ boxShadow: "none" }} // Remove default focus box-shadow
+            >
+              {clue}
+            </Button>
+          ))}
+        </VStack>
         {showSolution && (
-          <Box mt={5} bg="gray.700" p={4} borderRadius="md">
-            <Text fontWeight="bold">Correct Answer:</Text>
-            <Text>{questionData.correctAnswer}</Text>
-            <Text mt={3}>Solution:</Text>
-            <Text>{questionData.solution}</Text>
-          </Box>
+          <Alert status={isCorrect ? "success" : "error"} variant="subtle">
+            <AlertIcon />
+            {isCorrect ? "Correct! " : "Incorrect! "} {question.solution}
+          </Alert>
+        )}
+        {currentQuestionIndex < questionData.length - 1 && (
+          <Button colorScheme="teal" onClick={nextQuestion} mt={4}>
+            Next Question
+          </Button>
         )}
       </VStack>
     </Box>

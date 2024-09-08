@@ -16,7 +16,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/RightToEquality" element={<RightToEquality />} />
+            <Route path="/right-to-equality" element={<RightToEquality />} />
             
           </Routes>
         </Box>
