@@ -3,7 +3,7 @@ import { ChakraProvider, Box } from "@chakra-ui/react";
 import theme from "./theme";
 import Home from "./Home";
 import Navbar from "./components/Navbar";
-import RightToEquality from "./pages/RightToEquality/RightToEquality"; // Example page
+import RightToEquality from "./pages/RightToEquality"; // Example page
 // Import other pages similarly
 
 function App() {
